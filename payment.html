@@ -166,6 +166,19 @@ footer{
 
 <section class="payment-section">
   <div class="payment-box">
+    <div style="
+  background:#eef2ff;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:30px;
+  text-align:center;
+">
+  <h3 id="roomName"></h3>
+  <p style="font-size:22px;font-weight:bold;color:#4338ca;">
+    Amount Payable: ₹<span id="roomPrice"></span>
+  </p>
+</div>
+
     <h2>Select Payment Method</h2>
     <p>Choose how you want to pay</p>
 
@@ -180,7 +193,7 @@ footer{
     <form class="form" id="upi">
       <div class="form-group">
         <label>UPI ID</label>
-        <input type="text" placeholder="Enter upi id" required>
+        <input type="text" placeholder="name@upi" required>
       </div>
       <button class="pay-btn">Pay via UPI</button>
     </form>
@@ -250,7 +263,16 @@ document.querySelectorAll("form").forEach(form=>{
   });
 });
 </script>
+<script>
+const roomName = localStorage.getItem("roomType");
+const roomPrice = localStorage.getItem("roomPrice");
+
+document.getElementById("roomName").innerText =
+  "Room Selected: " + roomName;
+
+document.getElementById("roomPrice").innerText =
+  roomPrice;
+</script>
 
 </body>
 </html>
-
