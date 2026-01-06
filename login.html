@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login | Hotel Management</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+.login-box{
+    background:white;
+    padding:40px;
+    width:350px;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);
+    text-align:center;
+}
+.login-box h2{
+    margin-bottom:10px;
+    color:#1f2937;
+}
+.login-box p{
+    color:#6b7280;
+    margin-bottom:30px;
+}
+input{
+    width:100%;
+    padding:12px 15px;
+    margin-bottom:20px;
+    border-radius:8px;
+    border:2px solid #e5e7eb;
+}
+input:focus{
+    outline:none;
+    border-color:#667eea;
+}
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.error{
+    margin-top:15px;
+    color:red;
+    font-size:14px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2>Admin Login</h2>
+    <p>Hotel Management System</p>
+
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+
+    <button onclick="login()">Login</button>
+
+    <div class="error" id="errorMsg">Invalid username or password</div>
+</div>
+
+<script>
+function login(){
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const error = document.getElementById("errorMsg");
+
+    // MULTIPLE USERS
+    const users = [
+        { username: "sougata__karan", password: "Sougata@2004" },
+        { username: "sayan__giri", password: "Sayan@2005" }
+    ];
+
+    const isValid = users.some(
+        user => user.username === username && user.password === password
+    );
+
+    if(isValid){
+        window.location.href = "admin.html";
+    } else {
+        error.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
