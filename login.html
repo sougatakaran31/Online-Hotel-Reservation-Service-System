@@ -86,7 +86,6 @@ function login(){
     const password = document.getElementById("password").value;
     const error = document.getElementById("errorMsg");
 
-    // MULTIPLE USERS
     const users = [
         { username: "sougata__karan", password: "Sougata@2004" },
         { username: "sayan__giri", password: "Sayan@2005" }
@@ -97,6 +96,7 @@ function login(){
     );
 
     if(isValid){
+        sessionStorage.setItem("adminLoggedIn", "true");
         window.location.href = "admin.html";
     } else {
         error.style.display = "block";
@@ -104,5 +104,7 @@ function login(){
 }
 </script>
 
+
 </body>
 </html>
+
