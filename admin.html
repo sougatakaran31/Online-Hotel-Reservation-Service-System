@@ -309,6 +309,14 @@ table.addEventListener("click", function(e){
 </script>
 
 </body>
+    <!-- admin.html : lines 215–220 -->
+<script>
+function logout(){
+    sessionStorage.removeItem("adminLoggedIn");
+    window.location.href = "login.html";
+}
+</script>
+
 <script>
 if(sessionStorage.getItem("adminLoggedIn") !== "true"){
     window.location.href = "login.html";
@@ -316,5 +324,6 @@ if(sessionStorage.getItem("adminLoggedIn") !== "true"){
 </script>
 
 </html>
+
 
 
