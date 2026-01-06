@@ -307,4 +307,11 @@ table.addEventListener("click", function(e){
 </script>
 
 </body>
+<script>
+if(sessionStorage.getItem("adminLoggedIn") !== "true"){
+    window.location.href = "login.html";
+}
+</script>
+
 </html>
+
